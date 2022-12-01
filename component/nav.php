@@ -5,13 +5,14 @@
 <div class="container">
     <nav>
         <div class="menu-nav">
-            <a href="./">Página Inicial</a>
+            <a href="./">
+                <img src="../assets/images/icon.png" alt="">
+            </a>
             <a href="">Materiais Institucionais</a>
-            <a href="">Avisos</a>
+            <a href="./avisos">Avisos</a>
         </div>
         <div class="btn-nav">
-            <a href="./login.php">Login</a>
-            <a href="" class="btn-p">Solicitar Material</a>
+            <a href="./login">Login</a>
         </div>
     </nav>
 </div>

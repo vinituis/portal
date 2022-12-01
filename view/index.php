@@ -1,6 +1,6 @@
 <?php
 
-$page = 'Página Inicial';
+$page = 'Página Inicial | | Portal de Marketing';
 
 ?>
 
@@ -12,6 +12,12 @@ $page = 'Página Inicial';
 <body>
     
 <?php include '../component/nav.php'; ?>
+
+<div class="container">
+    <div class="banner">
+        <img src="../assets/images/icon.png" alt="">
+    </div>
+</div>
 
 </body>
 </html>
