@@ -2,7 +2,32 @@
 
 session_start();
 
+// if(isset($_COOKIE['lembrar'])){
+//     header('location: ./logado/');
+// }
+
 $page = 'Login | Portal de Marketing';
+
+if(isset($_POST['submit'])){
+    var_dump($_POST);
+
+    $login = $_POST['login'];
+
+    
+    if(isset($_POST['lembrar'])){
+        if($_POST['lembrar'] == 'on'){
+            setcookie('lembrar');
+            setcookie('lembrar', 'true', time()+20);
+            setcookie('login', $login, time()+20);
+        }
+    }else{
+        setcookie('lembrar');
+        setcookie('lembrar', 'false', time()+10);
+        setcookie('login', $login, time()+10);
+    }
+    
+    header('location: ./logado/');
+}
 
 ?>
 
@@ -29,7 +54,6 @@ $page = 'Login | Portal de Marketing';
             <small>Caso não tenha login, <a href="./cadastrar">solicite aqui!</a></small>
         </form>
     </div>
-   
 
 </body>
 </html>
