@@ -6,6 +6,20 @@ if($method === 'GET'){
             case 'home':
                 require "view/admin/Home.php";
             break;
+            case 'menus':
+                require "view/admin/Menus.php";
+            break;
+            case 'grupos':
+                require "view/admin/Grupos.php";
+            break;
+            case 'conteudos':
+                require "view/admin/Conteudos.php";
+            break;
+            case 'subgrupos':
+                require "view/admin/Subgrupos.php";
+            break;
+
+
             case 'sair':
                 require "controller/admin/Sair.php";
             break;
