@@ -40,3 +40,7 @@ body {
 p {
     font-size: 0.9rem;
 }
+
+ol, ul {
+    padding-left: 2rem !important;
+}
