@@ -1,5 +1,6 @@
 <?php
 require_once "controller/admin/Menus.php";
+require_once 'components/Excluir.php';
 ?>
 
 <!DOCTYPE html>
@@ -22,6 +23,12 @@ require_once "controller/admin/Menus.php";
                     </div>
                 </main>
             </div>
+            <?php
+                if(isset($_SESSION['adminMsg']) and $_SESSION['adminMsg'] != null){
+                    echo $_SESSION['adminMsg'];
+                    $_SESSION['adminMsg'] = null;
+                }
+            ?>
             <table class="table table-striped table-hover">
                 <thead>
                     <tr>
@@ -40,12 +47,8 @@ require_once "controller/admin/Menus.php";
                     echo "<td>$menu->titulo</td>";
                     echo "<td>$menu->link</td>";
                     echo "<td>$menu->status</td>";
-                    echo "<td><a href='' class='btn btn-primary'>Editar</a></td>";
-                    if($_SESSION['loginPerm'] == 0){
-                        echo "<td><a href='' class='btn btn-danger'>Excluir</a></td>";
-                    }else{
-                        echo "<td><a href='' class='btn btn-danger disabled'>Excluir</a></td>";
-                    }
+                    echo "<td><a href='editar?id=$menu->id&met=menus' class='btn btn-primary'>Editar</a></td>";
+                    echo btnExclusao($menu->id, "menus");
                     echo "</tr>";
                 }
                 ?>

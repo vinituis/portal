@@ -18,6 +18,9 @@ if($method === 'GET'){
             case 'subgrupos':
                 require "view/admin/Subgrupos.php";
             break;
+            case 'editar':
+                require "view/admin/Editar.php";
+            break;
 
 
             case 'sair':
@@ -43,10 +46,23 @@ if($method === 'GET'){
 }
 
 if($method === 'POST'){
-    switch ($caminho){
-        case 'login':
-            require "controller/Login.php";
-        break;
+    if(isset($_SESSION['login']) and $_SESSION['login'] == true){
+        switch ($caminho){
+            ///////////////// admin /////////////////
+                
+            case 'editar':
+                require "controller/admin/Update.php";
+            break;
+            case 'excluir':
+                require "controller/admin/Delete.php";
+            break;
+        }
+    }else{
+        switch ($caminho){
+            case 'login':
+                require "controller/Login.php";
+            break;
+        }
     }
 }
 

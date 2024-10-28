@@ -1,5 +1,6 @@
 <?php
 require_once "controller/admin/Conteudos.php";
+require_once 'components/Excluir.php';
 ?>
 
 <!DOCTYPE html>
@@ -22,6 +23,12 @@ require_once "controller/admin/Conteudos.php";
                     </div>
                 </main>
             </div>
+            <?php
+                if(isset($_SESSION['adminMsg']) and $_SESSION['adminMsg'] != null){
+                    echo $_SESSION['adminMsg'];
+                    $_SESSION['adminMsg'] = null;
+                }
+            ?>
             <table class="table table-striped table-hover">
                 <thead>
                     <tr>
@@ -38,12 +45,8 @@ require_once "controller/admin/Conteudos.php";
                     echo "<th>$conteudo->id</th>";
                     echo "<td>$conteudo->titulo</td>";
                     echo "<td>$conteudo->status</td>";
-                    echo "<td><a href='' class='btn btn-primary'>Editar</a></td>";
-                    if($_SESSION['loginPerm'] == 0){
-                        echo "<td><a href='' class='btn btn-danger'>Excluir</a></td>";
-                    }else{
-                        echo "<td><a href='' class='btn btn-danger disabled'>Excluir</a></td>";
-                    }
+                    echo "<td><a href='editar?id=$conteudo->id&met=conteudos' class='btn btn-primary'>Editar</a></td>";
+                    echo btnExclusao($conteudo->id, "conteudos");
                     echo "</tr>";
                 }
                 ?>

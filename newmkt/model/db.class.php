@@ -155,4 +155,23 @@ class DB {
             return false;
         }
     }
+
+    public static function delete($table, $conditions){
+        $banco = DB::connect();
+        $whereSql = '';
+        if(!empty($conditions)&& is_array($conditions)){
+            $whereSql .= ' WHERE ';
+            $i = 0;
+            foreach($conditions as $key => $value){
+                $pre = ($i > 0)?' AND ':'';
+                $whereSql .= $pre.$key." = '".$value."'";
+                $i++;
+            }
+        }
+        $query = "DELETE FROM ".$table.$whereSql;
+        $query = $banco->prepare("$query");
+        $delete = $query->execute();
+        return $delete?true:false;
+    }
+
 }
