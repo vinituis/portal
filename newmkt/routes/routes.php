@@ -21,6 +21,9 @@ if($method === 'GET'){
             case 'editar':
                 require "view/admin/Editar.php";
             break;
+            case 'adicionar':
+                require "view/admin/Adicionar.php";
+            break;
 
 
             case 'sair':
@@ -55,6 +58,9 @@ if($method === 'POST'){
             break;
             case 'excluir':
                 require "controller/admin/Delete.php";
+            break;
+            case 'adicionar':
+                require "controller/admin/Insert.php";
             break;
         }
     }else{

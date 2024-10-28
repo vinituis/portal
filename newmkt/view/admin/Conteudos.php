@@ -18,7 +18,7 @@ require_once 'components/Excluir.php';
                     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                         <h1 class="h2">Conteúdos</h1>
                         <div class="btn-group m-1 mb-0 mt-0">
-                            
+                            <a href="adicionar?met=conteudos" class="btn btn-dark">Adicionar novo menu</a>
                         </div>
                     </div>
                 </main>
