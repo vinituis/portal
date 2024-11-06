@@ -76,6 +76,51 @@ function retornaCampo($campo, $req){
             $input .= "<script> tinymce.init({ selector: '#conteudo', plugins: 'link codesample fullscreen image lists media quickbars searchreplace table wordcount', language: 'pt_BR', quickbars_insert_toolbar: false, menubar: false, paste_block_drop: true, toolbar: 'fullscreen | blocks | bold italic underline | numlist bullist', block_formats: 'Parágrafo=p; Título=h2; Subtítulo=h4;', }); </script>";
             return $input;
         break;
+
+        case 'nome':
+            $input = "<label for='nome' class='form-label'>Nome</label>";
+            if($req == null){
+                $input .= "<input class='form-control mb-3' type='text' id='nome' name='nome' value=''>";
+            }else{
+                $input .= "<input class='form-control mb-3' type='text' id='nome' name='nome' value='$req->nome'>";
+            }
+            return $input;
+        break;
+        
+        case 'email':
+            $input = "<label for='email' class='form-label'>E-mail</label>";
+            if($req == null){
+                $input .= "<input class='form-control mb-3' type='text' id='email' name='email' value=''>";
+            }else{
+                $input .= "<input class='form-control mb-3' type='text' id='email' name='email' value='$req->email'>";
+            }
+            return $input;
+        break;
+        
+        case 'depto':
+            $input = "<label for='depto' class='form-label'>Departamento</label>";
+            if($req == null){
+                $input .= "<input class='form-control mb-3' type='text' id='depto' name='depto' value=''>";
+            }else{
+                $input .= "<input class='form-control mb-3' type='text' id='depto' name='depto' value='$req->depto'>";
+            }
+            return $input;
+        break;
+        
+        case 'perm':
+            $input = "<label for='perm' class='form-label'>Permissão</label>";
+            $input .= "<select class='form-select mb-3' name='perm' id='perm'>";
+                $input .= "<option value='0'>0 - Super Administrador</option>";
+                $input .= "<option value='1'>1 - Administrador</option>";
+            $input .= "</select>";
+            return $input;
+        break;
+
+        case 'pass':
+            $input = "<label for='pass' class='form-label'>Senha</label>";
+            $input .= "<input class='form-control mb-3' type='password' id='pass' name='pass' value=''>";
+            return $input;
+        break;
     }
 }
 

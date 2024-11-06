@@ -91,6 +91,30 @@ if(isset($_POST) and isset($_GET['met'])){
                 header("location: $Met");
             }
         break;
+        case 'usuarios':
+            $Status = $_POST['status'];
+            $nome = $_POST['nome'];
+            $email = $_POST['email'];
+            $depto = $_POST['depto'];
+            $perm = $_POST['perm'];
+            $pass = md5($_POST['email'].$_POST['pass']);
+
+            $insert = DB::insert("login", array(
+                'status' => $Status, 
+                'nome' => $nome,
+                'email' => $email, 
+                'pass' => $pass, 
+                'depto' => $depto,
+                'perm' => $perm,
+            ));
+            if($insert[0]['status'] == 1){
+                $_SESSION['adminMsg'] = "<div class='alert alert-success' role='alert'><b>Inserção realizada!</b></div>";
+                header("location: $Met");
+            }else{
+                $_SESSION['adminMsg'] = "<div class='alert alert-danger' role='alert'><b>Houve um erro!</b><br>Tente novamente mais tarde.</div>";
+                header("location: $Met");
+            }
+        break;
         
     }
 }

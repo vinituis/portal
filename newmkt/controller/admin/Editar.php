@@ -22,6 +22,10 @@ if(isset($_GET['id']) and $_GET['id'] != null and isset($_GET['met']) and $_GET[
             $Req = DB::getUm("pages", array('where' => array('categoria' => 'material', 'id' => $Id)));
             $Campos = array('status', 'titulo', 'referencia', 'linkS', 'conteudo');
         break;
+        case 'usuarios':
+            $Req = DB::getUm("login", array('where' => array('id' => $Id)));
+            $Campos = array('status', 'nome', 'email', 'depto', 'perm');
+        break;
         }    
 
 }else{

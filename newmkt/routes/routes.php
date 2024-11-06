@@ -24,6 +24,9 @@ if($method === 'GET'){
             case 'adicionar':
                 require "view/admin/Adicionar.php";
             break;
+            case 'usuarios':
+                require "view/admin/Usuarios.php";
+            break;
 
 
             case 'sair':

@@ -64,6 +64,20 @@ if(isset($_GET['id']) and $_GET['id'] != null and isset($_GET['met']) and $_GET[
             }
         break;
         
+        case 'usuarios':
+            var_dump($_POST);
+            $update = DB::update("login", $_POST, array(
+                'id' => $Id,
+            ));
+            if($update[0]['status'] == 1){
+                $_SESSION['adminMsg'] = "<div class='alert alert-success' role='alert'><b>Alteração realizada!</b></div>";
+                header("location: $Met");
+            }else{
+                $_SESSION['adminMsg'] = "<div class='alert alert-danger' role='alert'><b>Houve um erro!</b><br>Tente novamente mais tarde.</div>";
+                header("location: $Met");
+            }
+        break;
+        
         default:
             # code...
             break;

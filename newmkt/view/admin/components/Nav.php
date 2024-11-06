@@ -15,6 +15,9 @@
                         echo "<a class='nav-link' aria-current='page' href='$itemNav->link'>$itemNav->titulo</a>";
                     }
                     echo "<a class='nav-link' aria-current='page' href='sair'>Sair</a>";
+                    if($_SESSION['loginPerm'] == 0){
+                        echo "<a class='nav-link' aria-current='page' href='usuarios'>Usuários</a>";
+                    }
                 ?>
             </div>
         </div>

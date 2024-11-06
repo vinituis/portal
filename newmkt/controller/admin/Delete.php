@@ -46,6 +46,16 @@ if(isset($_POST['Id']) and $_POST['Id'] != null and isset($_POST['Metodo']) and 
                 header("location: $Met");
             }
         break;
+        case 'usuarios':
+            $del = DB::delete("login", array('id' => $Id,));
+            if($del == true){
+                $_SESSION['adminMsg'] = "<div class='alert alert-success' role='alert'><b>Exclusão realizada!</b></div>";
+                header("location: $Met");
+            }else{
+                $_SESSION['adminMsg'] = "<div class='alert alert-danger' role='alert'><b>Houve um erro!</b><br>Tente novamente mais tarde.</div>";
+                header("location: $Met");
+            }
+        break;
     }
 }else{
     $_POST['Id'] = null;

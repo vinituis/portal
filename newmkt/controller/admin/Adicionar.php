@@ -18,6 +18,9 @@ if(isset($_GET['met']) and $_GET['met'] != null){
         case 'subgrupos':
             $Campos = array('status', 'titulo', 'referencia', 'linkS', 'conteudo');
         break;
+        case 'usuarios':
+            $Campos = array('status', 'nome', 'email', 'pass', 'depto', 'perm');
+        break;
     }
 }
 ?>
