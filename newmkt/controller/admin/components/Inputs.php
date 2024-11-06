@@ -76,6 +76,17 @@ function retornaCampo($campo, $req){
             $input .= "<script> tinymce.init({ selector: '#conteudo', plugins: 'link codesample fullscreen image lists media quickbars searchreplace table wordcount', language: 'pt_BR', quickbars_insert_toolbar: false, menubar: false, paste_block_drop: true, toolbar: 'fullscreen | blocks | bold italic underline | numlist bullist', block_formats: 'Parágrafo=p; Título=h2; Subtítulo=h4;', }); </script>";
             return $input;
         break;
+        
+        case 'conteudoImage':
+            $input = "<label for='conteudo' class='form-label'>Conteúdo</label>";
+            if($req == null){
+                $input .= "<textarea class='form-control' name='conteudo' id='conteudo'></textarea>";
+            }else{
+                $input .= "<textarea class='form-control' name='conteudo' id='conteudo'>$req->conteudo</textarea>";
+            }
+            $input .= "<script> tinymce.init({ selector: '#conteudo', plugins: 'link codesample fullscreen image lists media quickbars searchreplace table wordcount', language: 'pt_BR', quickbars_insert_toolbar: false, menubar: false, paste_block_drop: true, toolbar: 'fullscreen | blocks | bold italic underline | alignleft aligncenter alignright alignjustify | numlist bullist | link image | table', block_formats: 'Parágrafo=p; Título=h2; Subtítulo=h4;', file_picker_types: 'image', automatic_uploads: true, images_upload_url: 'insert-image', }); </script>";
+            return $input;
+        break;
 
         case 'nome':
             $input = "<label for='nome' class='form-label'>Nome</label>";

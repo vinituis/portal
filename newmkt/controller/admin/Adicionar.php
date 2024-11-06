@@ -13,7 +13,7 @@ if(isset($_GET['met']) and $_GET['met'] != null){
             $Campos = array('status', 'titulo', 'linkd', 'conteudo');
         break;
         case 'conteudos':
-            $Campos = array('status', 'titulo', 'conteudo');
+            $Campos = array('status', 'titulo', 'conteudoImage');
         break;
         case 'subgrupos':
             $Campos = array('status', 'titulo', 'referencia', 'linkS', 'conteudo');

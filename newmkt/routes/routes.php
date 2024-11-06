@@ -28,7 +28,6 @@ if($method === 'GET'){
                 require "view/admin/Usuarios.php";
             break;
 
-
             case 'sair':
                 require "controller/admin/Sair.php";
             break;
@@ -64,6 +63,9 @@ if($method === 'POST'){
             break;
             case 'adicionar':
                 require "controller/admin/Insert.php";
+            break;
+            case 'insert-image':
+                require "controller/admin/components/InsertImg.php";
             break;
         }
     }else{

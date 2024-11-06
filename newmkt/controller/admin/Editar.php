@@ -16,7 +16,7 @@ if(isset($_GET['id']) and $_GET['id'] != null and isset($_GET['met']) and $_GET[
         break;
         case 'conteudos':
             $Req = DB::getUm("conteudos", array('where' => array('id' => $Id)));
-            $Campos = array('status', 'titulo', 'conteudo');
+            $Campos = array('status', 'titulo', 'conteudoImage');
         break;
         case 'subgrupos':
             $Req = DB::getUm("pages", array('where' => array('categoria' => 'material', 'id' => $Id)));
