@@ -1,4 +1,5 @@
 <?php 
+
 $Itens = DB::getTodos("pages", array(
     'where' => array(
         'categoria' => 'menu-principal',

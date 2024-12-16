@@ -1,12 +1,13 @@
 <?php
 session_start();
+// phpinfo();
 date_default_timezone_set("America/Sao_Paulo");
 
 $projeto = 'newmkt';
 
 $uri = $_SERVER['REQUEST_URI'];
 $method = $_SERVER['REQUEST_METHOD'];
-
+// echo "AAAA";
 // var_dump($_GET['path']);
 
 if (isset($_GET['path'])) {

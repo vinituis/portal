@@ -6,7 +6,7 @@ require_once 'components/Excluir.php';
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<?php require 'components/head.php'; ?>
+<?php require 'components/Head.php'; ?>
 
     <body>
 

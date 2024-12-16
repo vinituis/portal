@@ -5,7 +5,7 @@ require_once "controller/admin/Adicionar.php";
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<?php require 'components/head.php'; ?>
+<?php require 'components/Head.php'; ?>
 <script src="https://cdn.tiny.cloud/1/okchzd8qovz1mgp5jyyl52ke8235rt57i2haxs6rnbly3b3g/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
 
     <body>

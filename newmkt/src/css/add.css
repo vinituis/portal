@@ -44,3 +44,7 @@ p {
 ol, ul {
     padding-left: 2rem !important;
 }
+
+svg {
+    width: 500px !important;
+}

@@ -1,3 +1,13 @@
+<?php require 'controller/user/Home.php'; ?>
+<?php
+if(isset($_GET['pgag']) and $_GET['pgag'] != null){
+    $Page = $_GET['pgag'];
+}else{
+    $Page = 0;
+}
+
+?>
+<?php require 'controller/user/components/Formatacao.php'; ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -18,19 +28,7 @@
                     </div>
                 </main>
             </div>
-            <table class="table">
-                <thead>
-                    <tr>
-                    <th scope="col">#</th>
-                    </tr>
-                </thead>
-                <tbody class="table-group-divider">
-                
-                    
-                </tbody>
-            </table>
-        </div>
-        
-
+            
+            <?php echo Paginas('consultas', 5, $Page); ?>
     </body>
 </html>
